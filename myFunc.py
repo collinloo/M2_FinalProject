@@ -60,10 +60,12 @@ def refine_xcols(summary):
 # Calculate Variance Inflation Factor
 def cal_vif(dataframe, xcol, variance_inflation_factor):
     '''
-    signature:     cal_vif(dataframe=object, xcol=list, variance_inflation_factor=statsmodels.stats.outliers_influence.variance_inflation_factor)
+    signature:     cal_vif(dataframe=object, xcol=list, variance_inflation_factor=obj)
     docstring:     using statsmodel VIF function to calculate feature multicollinearity.
                    return a list of features with their assocated VIF values.
-    parameters:    Dataframe object and a list of strings object
+    parameters:    dataframe: Dataframe object
+		   xcol: a list of strings object
+		   variance_inflation_factor: statsmodels.stats.outliers_influence.variance_inflation_factor object
     returns:       list of tuple        
     '''
     
@@ -75,11 +77,13 @@ def cal_vif(dataframe, xcol, variance_inflation_factor):
 # Create a function to eliminate VIF greater than 5, excluding sqft_living feature
 def rem_large_vif(xcol, vif, cutoff, np):
     '''
-    signature:    rem_large_vif(xcol=list, vif=floats, cutoff=int np=numpy).
+    signature:    rem_large_vif(xcol=list, vif=floats, cutoff=int, np=numpy).
     doctring:     evaluate list of values in vif results and eliminate entries greater than 5.
                   return a list of feature names.
     parameters:   x_cols: list of features used for old model.
                   vif: result set from the vif function.
+		  cutoff: criterior for removing VIF
+		  np: numpy object
     return:       list of string.
     '''
     
