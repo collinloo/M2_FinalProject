@@ -64,8 +64,8 @@ def cal_vif(dataframe, xcol, variance_inflation_factor):
     docstring:     using statsmodel VIF function to calculate feature multicollinearity.
                    return a list of features with their assocated VIF values.
     parameters:    dataframe: Dataframe object
-		   xcol: a list of strings object
-		   variance_inflation_factor: statsmodels.stats.outliers_influence.variance_inflation_factor object
+    xcol: a list of strings object
+    variance_inflation_factor: statsmodels.stats.outliers_influence.variance_inflation_factor object
     returns:       list of tuple        
     '''
     
@@ -82,8 +82,8 @@ def rem_large_vif(xcol, vif, cutoff, np):
                   return a list of feature names.
     parameters:   x_cols: list of features used for old model.
                   vif: result set from the vif function.
-		  cutoff: criterior for removing VIF
-		  np: numpy object
+    cutoff: criterior for removing VIF
+    np: numpy object
     return:       list of string.
     '''
     
